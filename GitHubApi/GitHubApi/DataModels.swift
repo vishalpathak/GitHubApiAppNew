@@ -11,6 +11,7 @@ import UIKit
 protocol NewDesign{//Protocol
     var designName: String {get set}
 }
+//MARK: Data Models
 struct UserProfile: Decodable {
     let login : String?
     let id: Int?

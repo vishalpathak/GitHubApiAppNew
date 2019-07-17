@@ -36,7 +36,7 @@ struct UserProfile: Decodable {
     let blog: String?
     let location: String?
     let email: String?
-    let hireable: String?
+    let hireable: Bool?
     let bio: String?
     let public_repos: Int?
     let public_gists: Int?

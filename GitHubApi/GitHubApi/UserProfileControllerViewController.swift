@@ -20,6 +20,8 @@ class UserProfileControllerViewController: UIViewController {
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var btnUserProfile: UIButton!
     
+    @IBOutlet weak var lblLocationCity: UILabel!
+    var strUserName: String?
     var startVal: Double = 0
     var endFollowVal: Double = 0
     var endFollowingVal: Double = 0
@@ -39,11 +41,16 @@ class UserProfileControllerViewController: UIViewController {
         print("memory reclaimed no cycles")
     }
     override func viewDidAppear(_ animated: Bool) {
-        getDataForUserProfile()
+        guard let name = strUserName else{
+            print("error in name")
+            return
+        }
+        getDataForUserProfile(strName: name)
     }
     
-   fileprivate func getDataForUserProfile() -> Void {
-        NetWorkManagert.sharedNetWork.getDataFromUrl(url: "https://api.github.com/users/torvalds", completion: { (result: UserProfile) in
+   fileprivate func getDataForUserProfile(strName: String) -> Void {
+    let strUrl = API.UserDetails + strName
+        NetWorkManagert.sharedNetWork.getDataFromUrl(url: strUrl, completion: { (result: UserProfile) in
             DispatchQueue.main.async {
                 self.updateUserDetails(user: result)
             }
@@ -53,18 +60,21 @@ class UserProfileControllerViewController: UIViewController {
     }
     //MARK: Update UI Details
    fileprivate func updateUserDetails(user: UserProfile) -> Void {
-        
-        lblIdNumber.text = String(user.id ?? 0)
+        lblIdNumber.text = "Id:\(String(user.id ?? 0))"
+    if user.name?.count == 0 || user.name == nil{
         lblUserName.text = user.login
-        
-       endFollowVal = Double(user.followers ?? 0)
-       endFollowingVal = Double(user.following ?? 0)
-       animationStartDate = Date()
+    }else{
+        lblUserName.text = user.name
+    }
+    
+        endFollowVal = Double(user.followers ?? 0)
+        endFollowingVal = Double(user.following ?? 0)
+        animationStartDate = Date()
       let displayLink = CADisplayLink(target: self, selector: #selector(handleAnimation))
-        displayLink.add(to: .main, forMode: .default)
+      displayLink.add(to: .main, forMode: .default)
         self.displayLink = displayLink
-   
         lblUserBio.text = user.bio
+    lblLocationCity.text = user.location
         if let url = URL(string: user.avatar_url ?? "") {
             imgProfilePicture.sd_setImage(with: url) { (img, err, cahetype, url) in
             }

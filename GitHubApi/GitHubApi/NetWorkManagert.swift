@@ -36,7 +36,7 @@ class NetWorkManagert: NSObject {
                 completion(result)
             } catch let jsonerror {
                 error(err as NSError?)
-                print(jsonerror)
+                print("JSON: \(jsonerror)")
             }
             }.resume()
     }

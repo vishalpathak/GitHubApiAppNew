@@ -31,7 +31,9 @@ class UsersListController: UIViewController {
         print("no leak")
     }
     override func viewDidAppear(_ animated: Bool) {
+        if userList.count == 0{
         getDataForUserFollowersee(name: userName!, pageNo: pageCount)
+        }
     }
     
    fileprivate func getDataForUserFollowersee(name: String, pageNo: Int) -> Void {
@@ -87,6 +89,15 @@ extension UsersListController: UITableViewDelegate, UITableViewDataSource{
         return 146.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let objList = userList[indexPath.row] as? SingleFollowerInfo
+
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "userprofile") as? UserProfileControllerViewController
+        guard let userName = objList?.login else{
+            print("E")
+            return
+        }
+        vc?.strUserName = userName
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
         if indexPath.row == userList.count - 1{

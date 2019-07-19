@@ -19,9 +19,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtUserSearch: UITextField!
     
     @IBOutlet weak var lblValidationMessage: UILabel!
+    
+    let followerLabel = UILabel()
+    let UsersLabel = UILabel()
+    let imgFollowersLbl = UIImageView()
+    let imgUserLbl = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
         txtUserSearch.delegate = self
+        
+        //MARK : Created UI With Progrmatical Way
+        
+        let stackView = UIStackView (arrangedSubviews: [UsersLabel,followerLabel])
+        stackView.axis = .vertical
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
        lblValidationMessage.isHidden = true

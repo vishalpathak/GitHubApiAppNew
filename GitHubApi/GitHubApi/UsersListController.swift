@@ -113,6 +113,7 @@ extension UsersListController: UITableViewDelegate, UITableViewDataSource{
         let objList = userList[sender.tag] as? SingleFollowerInfo
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "followercontroller") as? FollowerListController
         vc?.followerUrl = objList?.followers_url
+        vc?.strNameofFollowers = objList?.login
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {

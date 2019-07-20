@@ -20,6 +20,7 @@
 		153FA8D522D613CF008B5D7F /* FollowerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153FA8D422D613CF008B5D7F /* FollowerListController.swift */; };
 		1542C37422DDC0DE00E001A0 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1542C37222DDC0DD00E001A0 /* OpenSans-Regular.ttf */; };
 		1542C37522DDC0DE00E001A0 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1542C37322DDC0DE00E001A0 /* OpenSans-Semibold.ttf */; };
+		15679D2E22E323DD000D0E2C /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15679D2D22E323DD000D0E2C /* DesignableButton.swift */; };
 		1597941022D723F900322571 /* FollowerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1597940F22D723F900322571 /* FollowerInfoTableViewCell.swift */; };
 		1597941222D7320200322571 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1597941122D7320200322571 /* Constants.swift */; };
 		15BA292222DCE68B005344E6 /* UsersListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BA292122DCE68B005344E6 /* UsersListController.swift */; };
@@ -69,6 +70,7 @@
 		153FA8D422D613CF008B5D7F /* FollowerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListController.swift; sourceTree = "<group>"; };
 		1542C37222DDC0DD00E001A0 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		1542C37322DDC0DE00E001A0 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		15679D2D22E323DD000D0E2C /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		1597940F22D723F900322571 /* FollowerInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1597941122D7320200322571 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		15BA292122DCE68B005344E6 /* UsersListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				153FA8A422D5B3D4008B5D7F /* GitHubApi.xcdatamodeld */,
 				1542C37222DDC0DD00E001A0 /* OpenSans-Regular.ttf */,
 				1542C37322DDC0DE00E001A0 /* OpenSans-Semibold.ttf */,
+				15679D2D22E323DD000D0E2C /* DesignableButton.swift */,
 			);
 			path = GitHubApi;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				15EEBA8C22DB103100C3DEBB /* UserProfileControllerViewController.swift in Sources */,
 				153FA8D322D5B99D008B5D7F /* DataModels.swift in Sources */,
 				153FA8A622D5B3D4008B5D7F /* GitHubApi.xcdatamodeld in Sources */,
+				15679D2E22E323DD000D0E2C /* DesignableButton.swift in Sources */,
 				153FA89E22D5B3D4008B5D7F /* AppDelegate.swift in Sources */,
 				1597941222D7320200322571 /* Constants.swift in Sources */,
 			);

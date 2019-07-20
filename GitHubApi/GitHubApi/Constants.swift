@@ -9,7 +9,6 @@
 import Foundation
 struct API {
     static let BASE_URL : String = "https://api.github.com/"
-    static let Follower : String = BASE_URL + "users/torvalds/followers"
     static let UserDetails : String = BASE_URL + "users/"
     static let followerList: String = BASE_URL + "search/users?q="
 }

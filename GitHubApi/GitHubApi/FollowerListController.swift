@@ -12,8 +12,11 @@ import SDWebImage
 class FollowerListController: UIViewController {
    
     @IBOutlet weak var tblFollowerList: UITableView!
+    
+    @IBOutlet weak var lblFollowersListName: UILabel!
     var followerList =  [Any]()
     var followerUrl: String?
+    var strNameofFollowers: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tblFollowerList.dataSource = self
@@ -44,6 +47,12 @@ class FollowerListController: UIViewController {
                 print(jsonerror)
             }
         }.resume()*/
+    if let usern = strNameofFollowers{
+        lblFollowersListName.text = "User \(usern)'s followers"
+    }else{
+        lblFollowersListName.text = ""
+    }
+    
     guard let urlNew = followerUrl else{
         print("No valid Url")
         return

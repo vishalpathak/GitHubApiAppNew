@@ -26,9 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let imgFollowersLbl = UIImageView()
     let imgUserLbl = UIImageView()
     fileprivate func setUpLabels() {
-        //appInformation.backgroundColor = UIColor.orange
-        //UsersLabel.backgroundColor = UIColor.gray
-        //followerLabel.backgroundColor = UIColor.green
+       
         appInformation.numberOfLines = 0
         UsersLabel.numberOfLines = 0
         followerLabel.numberOfLines = 0
@@ -76,10 +74,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         
         UIView.animate(withDuration: 0.5, delay: 0.6, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveLinear, animations: {
-            self.UsersLabel.transform = CGAffineTransform(translationX: 100, y: 0)
+            self.UsersLabel.transform = CGAffineTransform(translationX: -100, y: 0)
         }) { (_) in
             UIView.animate(withDuration: 1.0, delay: 0.6, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveLinear, animations: {
-                self.UsersLabel.transform = self.UsersLabel.transform.translatedBy(x: -100, y: 0)
+                self.UsersLabel.transform = self.UsersLabel.transform.translatedBy(x: 100, y: 0)
             })
         }
         

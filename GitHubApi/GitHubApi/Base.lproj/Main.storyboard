@@ -38,9 +38,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LAT-Tr-bcf"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcW-eg-f9W">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcW-eg-f9W" customClass="DesignableButton" customModule="GitHubApi" customModuleProvider="target">
                                 <rect key="frame" x="16" y="155" width="288" height="36"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.71372549019999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="f9Q-bm-PKQ"/>
                                 </constraints>
@@ -48,6 +48,17 @@
                                 <state key="normal" title="Get Users Information">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColour">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnUserInformationClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AsN-gX-NYR"/>
                                 </connections>
@@ -119,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OBH-S4-1SD">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="followercell" rowHeight="127" id="tQw-0w-GCK" customClass="FollowerInfoTableViewCell" customModule="GitHubApi" customModuleProvider="target">
@@ -154,12 +165,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpA-8q-Y8g">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpA-8q-Y8g" customClass="DesignableButton" customModule="GitHubApi" customModuleProvider="target">
                                                     <rect key="frame" x="100" y="95" width="204" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="7Mr-KU-9tf"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColour">
+                                                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -185,17 +207,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83P-Bu-rEs">
+                                <rect key="frame" x="16" y="24" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="IVM-KC-vu4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OBH-S4-1SD" firstAttribute="trailing" secondItem="njR-Pd-LIY" secondAttribute="trailing" id="42G-jJ-5tf"/>
-                            <constraint firstItem="OBH-S4-1SD" firstAttribute="top" secondItem="njR-Pd-LIY" secondAttribute="top" id="MvL-xv-HfT"/>
+                            <constraint firstItem="njR-Pd-LIY" firstAttribute="trailing" secondItem="83P-Bu-rEs" secondAttribute="trailing" constant="16" id="M2Z-WN-lJS"/>
+                            <constraint firstItem="OBH-S4-1SD" firstAttribute="top" secondItem="njR-Pd-LIY" secondAttribute="top" constant="30" id="MvL-xv-HfT"/>
+                            <constraint firstItem="83P-Bu-rEs" firstAttribute="top" secondItem="njR-Pd-LIY" secondAttribute="top" constant="4" id="ROo-2S-Y0u"/>
                             <constraint firstItem="OBH-S4-1SD" firstAttribute="leading" secondItem="njR-Pd-LIY" secondAttribute="leading" id="faj-17-VqX"/>
                             <constraint firstItem="OBH-S4-1SD" firstAttribute="bottom" secondItem="njR-Pd-LIY" secondAttribute="bottom" id="oGf-Pu-fES"/>
+                            <constraint firstItem="83P-Bu-rEs" firstAttribute="leading" secondItem="njR-Pd-LIY" secondAttribute="leading" constant="16" id="raH-pm-Dyp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="njR-Pd-LIY"/>
                     </view>
                     <connections>
+                        <outlet property="lblFollowersListName" destination="83P-Bu-rEs" id="8G2-3d-2wy"/>
                         <outlet property="tblFollowerList" destination="OBH-S4-1SD" id="SsQ-lx-gV2"/>
                     </connections>
                 </viewController>
@@ -450,15 +485,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZr-7Y-7QA">
-                                                    <rect key="frame" x="100" y="110" width="172" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZr-7Y-7QA" customClass="DesignableButton" customModule="GitHubApi" customModuleProvider="target">
+                                                    <rect key="frame" x="100" y="110" width="172" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="3l9-Te-cL2"/>
+                                                        <constraint firstAttribute="height" constant="25" id="3l9-Te-cL2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                                     <state key="normal" title="Get Followers">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColour">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                             <constraints>

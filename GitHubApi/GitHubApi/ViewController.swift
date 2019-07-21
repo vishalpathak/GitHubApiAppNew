@@ -10,10 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var btnFollowers: UIButton!
-    
-    @IBOutlet weak var btnProfileClicked: UIButton!
-    
     @IBOutlet weak var btnGetUserInformation: UIButton!
     
     @IBOutlet weak var txtUserSearch: UITextField!
@@ -62,7 +58,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //MARK : Created UI With Progrmatical Way
         setUpLabels()
         setUpStackView()
-        
     }
     
     func setUpAnimation() -> Void {

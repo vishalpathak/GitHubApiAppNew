@@ -44,9 +44,11 @@ class UserProfileControllerViewController: UIViewController {
         imgProfilePicture.clipsToBounds = true
         self.navigationItem.title = "Profile"
     }
+    
     deinit {
         print("memory reclaimed no cycles")
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         guard let name = strUserName else{
             print("error in name")
@@ -99,7 +101,6 @@ class UserProfileControllerViewController: UIViewController {
     }else{
         lblUserName.text = user.name
     }
-    
         endFollowVal = Double(user.followers ?? 0)
         endFollowingVal = Double(user.following ?? 0)
         reposCount = Double(user.public_repos ?? 0)

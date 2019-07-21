@@ -12,7 +12,7 @@ import SVProgressHUD
 class NetWorkManagert: NSObject {
     
     static let sharedNetWork = NetWorkManagert()
-   // private override init() {}
+    private override init() {}
     typealias ErrorHandler = (_ error: NSError?) -> Void
     
     func getDataFromUrl<T: Decodable>(url: String,completion: @escaping (T) -> (), error: @escaping ErrorHandler) -> Void {

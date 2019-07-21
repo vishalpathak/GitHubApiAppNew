@@ -151,6 +151,7 @@
 				15EEBA8B22DB103100C3DEBB /* UserProfileControllerViewController.swift */,
 				15BA292122DCE68B005344E6 /* UsersListController.swift */,
 				15BA292322DCE71E005344E6 /* UserTableViewCell.swift */,
+				15679D2D22E323DD000D0E2C /* DesignableButton.swift */,
 				153FA8A122D5B3D4008B5D7F /* Main.storyboard */,
 				153FA8A722D5B3D6008B5D7F /* Assets.xcassets */,
 				153FA8A922D5B3D6008B5D7F /* LaunchScreen.storyboard */,
@@ -158,7 +159,6 @@
 				153FA8A422D5B3D4008B5D7F /* GitHubApi.xcdatamodeld */,
 				1542C37222DDC0DD00E001A0 /* OpenSans-Regular.ttf */,
 				1542C37322DDC0DE00E001A0 /* OpenSans-Semibold.ttf */,
-				15679D2D22E323DD000D0E2C /* DesignableButton.swift */,
 			);
 			path = GitHubApi;
 			sourceTree = "<group>";

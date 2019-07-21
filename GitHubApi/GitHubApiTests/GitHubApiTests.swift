@@ -30,5 +30,15 @@ class GitHubApiTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    //MARK: Check Valid Date String. Tested with Different Date formats and checked that is it valid string or nil String.
+    func testValidDateString() {
+        let objCommon = CommonFunctions()
+        let dateStr = objCommon.convertDateFormater(strDT: "2019-02-12T14:20:45Z", givenFormat: "yyyy-MM-dd'T'HH:mm:ssZ", expectedFormat: "dd/MM/yyyy")
+        print(dateStr)
+        XCTAssertNotNil(dateStr)
+         let dateStr1 = objCommon.convertDateFormater(strDT: "Mar-2019-21", givenFormat: "MMM-yyyy-dd", expectedFormat: "dd/MM/yyyy")
+        print(dateStr1)
+        XCTAssertNotNil(dateStr1)
+    }
 
 }

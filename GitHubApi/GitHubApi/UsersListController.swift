@@ -58,7 +58,29 @@ class UsersListController: UIViewController {
                 }
             }
         }, error: { (error) in
-            //print("Error \(error?.localizedDescription ?? "Something went wrong.")")
+            DispatchQueue.main.async{
+            let alert = UIAlertController(title: "GitHub", message: error?.localizedDescription ?? "Something went wrong.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    self.getDataForUserFollowersee(name: self.userName!, pageNo: self.pageCount)
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destruct")
+                }}))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+                switch action.style{
+                case .default:
+                   print("default")
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destruct")
+                }}))
+            
+            self.present(alert, animated: true, completion: nil)
+            }
         })
     }
 }

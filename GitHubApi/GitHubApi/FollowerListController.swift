@@ -17,6 +17,7 @@ class FollowerListController: UIViewController {
     var followerList =  [Any]()
     var followerUrl: String?
     var strNameofFollowers: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tblFollowerList.dataSource = self
@@ -24,29 +25,12 @@ class FollowerListController: UIViewController {
         tblFollowerList.tableFooterView = UIView()
         self.navigationItem.title = "Followers"
     }
+    
     deinit {
         print("Reclaim memory in followers")
     }
+    
    override func viewDidAppear(_ animated: Bool) {
-      /*  let jsonUrlString = "https://api.github.com/users/torvalds/followers"
-        guard let url = URL(string: jsonUrlString) else{
-            return
-        }
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
-            guard let data = data else{
-                return
-            }
-            //let jsonString = String(data: data, encoding: .utf8)
-            do {
-                let followers = try JSONDecoder().decode([UserFollower_New].self, from: data)
-            for i in 0..<followers.count{
-                let obj = followers[i] 
-                print("LoginName: \(obj.login ?? "no") , ID: \(obj.id ?? -1)")
-                }
-            } catch let jsonerror{
-                print(jsonerror)
-            }
-        }.resume()*/
     if let usern = strNameofFollowers{
         lblFollowersListName.text = "User \(usern)'s followers"
     }else{
@@ -66,7 +50,33 @@ class FollowerListController: UIViewController {
             self.tblFollowerList.reloadData()
         }
     }, error: { (error) in
-        print("Error :\(error?.localizedDescription ?? "some error")")
+        DispatchQueue.main.async{
+            let alert = UIAlertController(title: "GitHub", message: error?.localizedDescription ?? "Something went wrong.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    guard let urlNew = self.followerUrl else{
+                        print("No valid Url")
+                        return
+                    }
+                    self.getDataForFollowers(followUrl: urlNew)
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destruct")
+                }}))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destruct")
+                }}))
+            self.present(alert, animated: true, completion: nil)
+        }
+       // print("Error :\(error?.localizedDescription ?? "some error")")
     })
     }
     

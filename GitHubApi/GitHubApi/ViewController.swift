@@ -43,7 +43,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         stackView.axis = .vertical
         stackView.spacing = 10
         view.addSubview(stackView)
-        stackView.frame = CGRect(x: btnGetUserInformation.frame.origin.x, y: (btnGetUserInformation.frame.origin.y + btnGetUserInformation.frame.size.height + 20), width: btnGetUserInformation.frame.size.width, height: 270.0)
+        let heightStack = appInformation.frame.size.height + UsersLabel.frame.size.height + followerLabel.frame.size.height
+        stackView.frame = CGRect(x: btnGetUserInformation.frame.origin.x, y: (btnGetUserInformation.frame.origin.y + btnGetUserInformation.frame.size.height + 20), width: btnGetUserInformation.frame.size.width, height: heightStack)
         //Enable Auto Layout for Stack view by Programmatic Way
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -61,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //MARK : Created UI With Progrmatical Way
         setUpLabels()
         setUpStackView()
-        setUpAnimation()
+        
     }
     
     func setUpAnimation() -> Void {
@@ -91,27 +92,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
        lblValidationMessage.isHidden = true
+        setUpAnimation()
     }
     //MARK: Button Click Events fetching Followers, Profile, Public Repo
-    @IBAction func btnFollowersClicked(_ sender: Any) {
-       let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "followercontroller") as? FollowerListController
-        self.navigationController?.pushViewController(vc!, animated: true)
-    }
-    
-    @IBAction func btnProfileClicked(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "userprofile") as? UserProfileControllerViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
-    }
     
     @IBAction func btnUserInformationClicked(_ sender: Any) {
-        setUpAnimation()
         if txtUserSearch.text?.count ?? 0 > 0{
             lblValidationMessage.isHidden = true
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "userlistcontroller") as? UsersListController
             vc?.userName = txtUserSearch.text
             self.navigationController?.pushViewController(vc!, animated: true)
         } else{
-            print("Enter user name")
             lblValidationMessage.isHidden = false
         }
     }

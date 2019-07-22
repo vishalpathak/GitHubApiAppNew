@@ -37,7 +37,7 @@ class UsersListController: UIViewController {
     }
     
    fileprivate func getDataForUserFollowersee(name: String, pageNo: Int) -> Void {
-        let urlStr = API.followerList + "\(name)&page=\(pageNo)"
+        let urlStr = API.UserList + "\(name)&page=\(pageNo)"
         NetWorkManagert.sharedNetWork.getDataFromUrl(url: urlStr, completion: { (result: UserFollowersInfo) in
             if let newCount = result.total_count{
                 self.totalRecords = newCount
